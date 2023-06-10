@@ -1,5 +1,18 @@
 import { createRouter, createWebHashHistory} from 'vue-router'
 
+// 进度条
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
+NProgress.configure({
+    easing: 'ease', // 动画方式
+    speed: 500, // 递增进度条的速度
+    showSpinner: true, // 是否显示加载ico
+    trickleSpeed: 200, // 自动递增间隔
+    minimum: 0.3, // 更改启动时使用的最小百分比
+    parent: 'body', //指定进度条的父容器
+})
+
 const routes = [
     // 首页
     {
@@ -10,7 +23,7 @@ const routes = [
         children:[
             // 首页
             {
-                path:"/home",
+                path:"/",
                 name:"Home",
                 component:() => import("@/views/home/home.vue")
             },
@@ -45,4 +58,15 @@ const router = createRouter({
     routes
 })
 
+
+// 路由守卫
+router.beforeEach((to, from ,next) => {
+    NProgress.start()
+
+    next()
+})
+
+router.afterEach((to,from) => {
+    NProgress.done()
+})
 export default router

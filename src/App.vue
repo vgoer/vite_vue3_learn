@@ -1,4 +1,5 @@
 <style scoped lang="less">
+
 </style>
 <template>
     <RouterView></RouterView>
