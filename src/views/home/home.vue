@@ -1,7 +1,4 @@
-<style scoped lang='less'>
-
-
-</style>
+<style scoped lang="less"></style>
 <template>
     <div class="home">
         hello
@@ -9,13 +6,12 @@
     </div>
 </template>
 <script setup>
-import { useRouter } from 'vue-router'
-import { api_login } from '@/api/login.js'
+import { useRouter } from 'vue-router';
+import { api_login } from '@/api/login.js';
 
-const router = useRouter()
+const router = useRouter();
 const add = async () => {
-    let res = await api_login()
-    console.log(res)
-}
-
+    let res = await api_login();
+    console.log(res);
+};
 </script>

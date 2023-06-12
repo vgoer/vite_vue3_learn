@@ -1,10 +1,6 @@
-<style scoped lang="less">
-
-</style>
+<style scoped lang="less"></style>
 <template>
     <RouterView></RouterView>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>

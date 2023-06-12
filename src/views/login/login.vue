@@ -1,15 +1,5 @@
-<style scoped lang='less'>
-
-
-</style>
+<style scoped lang="less"></style>
 <template>
-
-    <div class="login">
-        login
-    </div>
-
+    <div class="login">login</div>
 </template>
-<script setup>
-
-
-</script>
+<script setup></script>

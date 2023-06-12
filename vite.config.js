@@ -1,27 +1,26 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import path from 'path'
-
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [
-        vue(),
-    ],
+    plugins: [vue()],
 
     // 路径
-    resolve:{
-        alias:{
-            '@':path.resolve('./src'),   // @代替src
-        }
+    resolve: {
+        alias: {
+            '@': path.resolve('./src'), // @代替src
+        },
     },
 
-    // less 
+    // less
     css: {
         preprocessorOptions: {
             less: {
                 modifyVars: {
-                    hack: `true; @import (reference) "${path.resolve("src/styles/base.less")}";`,
+                    hack: `true; @import (reference) "${path.resolve(
+                        'src/styles/base.less',
+                    )}";`,
                 },
                 javascriptEnabled: true,
             },
@@ -29,16 +28,36 @@ export default defineConfig({
     },
 
     // 内网
-    server:{
-        host:true,  // 内网
-        cors:true,  //为开发服务器配置 CORS , 默认启用并允许任何源
-        open:false,  //服务启动时自动在浏览器中打开应用
-        port:'8888'
+    server: {
+        host: 'localhost', // 指定监听的IP地址
+        port: 3333, // 指定服务器端口
+        open: true, // 开发服务器启动时，自动在浏览器打开
+        strictPort: false, // 设为 true 时，若端口已被占用会直接退出，不会尝试下一个可用端口
+        https: false, // 是否开启 https 服务
+        cors: true, // 允许跨域
+        // 配置代理
+        proxy: {
+            '/api': {
+                target: 'http://127.0.0.1:8000', // 接口地址。
+                changeOrigin: true, // 接口跨域。
+                secure: false, // 启用 https 服务时需要配置。
+            },
+        },
     },
+
     // 打包
-    build:{
-      target:"modules",    //浏览器兼容性  "esnext"|"modules"
-      outDir: "dist",       //指定输出路径
-      cssCodeSplit:true,   //启用/禁用 CSS 代码拆分
-    }
-})
+    build: {
+        target: 'modules', // 浏览器兼容目标
+        outDir: 'dist', // 打包输出路径
+        assetsDir: 'assets', // 静态资源存放路径
+        cssCodeSplit: true, // 允许 css 代码拆分
+        sourcemap: false, // 不生成 sourceMap 文件
+        minify: 'terser', // 缩小文件体积
+        terserOptions: {
+            compress: {
+                drop_console: true, // 取消 console
+                drop_debugger: true, // 取消 debugger
+            },
+        },
+    },
+});

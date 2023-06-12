@@ -1,7 +1,4 @@
-<style scoped lang='less'>
-
-
-</style>
+<style scoped lang="less"></style>
 <template>
     <Header></Header>
 
@@ -11,10 +8,7 @@
     <Footer></Footer>
 </template>
 <script setup>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import NavBar from './components/NavBar.vue'
-
-
-
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import NavBar from './components/NavBar.vue';
 </script>
