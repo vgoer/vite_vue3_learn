@@ -3,6 +3,7 @@
     <div class="home">
         hello
         <button @click="add">aaa</button>
+        <el-button>hello</el-button>
     </div>
 </template>
 <script setup>

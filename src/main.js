@@ -1,9 +1,14 @@
 import { createApp } from 'vue';
-import './style.css';
+
 import App from './App.vue';
 import router from './router/index.js';
-const app = createApp(App);
 
+// css
+import './style.css';
+import './reset.css'
+import 'element-plus/dist/index.css'
+
+const app = createApp(App);
 // router
 app.use(router);
 
