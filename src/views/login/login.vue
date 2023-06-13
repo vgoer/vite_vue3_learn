@@ -15,6 +15,7 @@
 import { store_main } from '@/store/index.js'
 import { storeToRefs } from 'pinia'
 import { store_login } from '@/store/login.js'
+import { useRoute } from 'vue-router'
 
 const store = store_main()
 const { sayMsg, count } = storeToRefs(store)
@@ -22,6 +23,11 @@ console.log(sayMsg.value,count.value)
 
 // const login = store_login()
 // console.log(login)
+
+
+// 接受参数
+const route = useRoute()
+console.log(route.query)
 
 
 </script>
