@@ -7,13 +7,14 @@
 }
 .block:last-child {
     border-right: none;
+    .demonstration{
+        display: block;
+        color: var(--el-text-color-secondary);
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
 }
-.block .demonstration {
-    display: block;
-    color: var(--el-text-color-secondary);
-    font-size: 14px;
-    margin-bottom: 20px;
-}
+
 </style>
 <template>
     <div class="panel">

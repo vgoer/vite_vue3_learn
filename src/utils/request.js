@@ -13,6 +13,7 @@ NProgress.configure({
     parent: 'body', //指定进度条的父容器
 });
 
+
 /**
  * 请求配置
  */

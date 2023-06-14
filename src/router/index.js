@@ -43,13 +43,18 @@ const routes = [
         name: 'Login',
         component: () => import('@/views/login/login.vue'),
     },
-
+    {
+        path:'/echarts',
+        name:"Echarts",
+        component:() => import("@/views/echarts/echarts.vue")
+    },
     // 404
     {
         path: '/:pathMatch(.*)*',
         name: 'NotFound',
         component: () => import('@/views/404/404.vue'),
     },
+    
 ];
 
 const router = createRouter({
