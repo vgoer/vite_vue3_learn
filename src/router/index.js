@@ -48,6 +48,11 @@ const routes = [
         name:"Echarts",
         component:() => import("@/views/echarts/echarts.vue")
     },
+    {
+        path:"/guangdong",
+        name:'Guangdong',
+        component:() => import("@/views/guangdong/guangdong.vue"),
+    },
     // 404
     {
         path: '/:pathMatch(.*)*',
