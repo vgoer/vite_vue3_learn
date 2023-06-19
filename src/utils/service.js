@@ -17,7 +17,7 @@ NProgress.configure({
 /**
  * 请求配置
  */
-const request = axios.create({
+const service = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
     timeout: 4000,
     headers: {
@@ -28,7 +28,7 @@ const request = axios.create({
 /**
  * 请求拦截器
  */
-request.interceptors.request.use(
+service.interceptors.request.use(
     (config) => {
         NProgress.start();
         return config;
@@ -42,7 +42,7 @@ request.interceptors.request.use(
 /**
  * 响应拦截器
  */
-request.interceptors.response.use(
+service.interceptors.response.use(
     (response) => {
         NProgress.done();
         return response;
@@ -54,4 +54,4 @@ request.interceptors.response.use(
     },
 );
 
-export default request;
+export default service;

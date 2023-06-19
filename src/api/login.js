@@ -1,7 +1,7 @@
-import request from '@/utils/request';
+import service from '@/utils/service';
 
 export const api_login = (data) => {
-    return request({
+    return service({
         url: '/www/login',
         method: 'post',
         data,
@@ -9,7 +9,7 @@ export const api_login = (data) => {
 };
 
 export const api_register = (data) => {
-    return request({
+    return service({
         url: '/www/register',
         method: 'post',
         data,
