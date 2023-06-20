@@ -1,3 +1,5 @@
 <style scoped lang="less"></style>
-<template></template>
+<template>
+    Aside
+</template>
 <script setup></script>
