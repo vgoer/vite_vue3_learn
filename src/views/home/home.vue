@@ -13,10 +13,8 @@ import { api_login } from '@/api/login.js';
 // 路由跳转 和 传参
 const router = useRouter();
 const toLogin = (id) => {
-    router.push({name:"Login",query: {id:id,name:"admin"}})
-}
-
-
+    router.push({ name: 'Login', query: { id: id, name: 'admin' } });
+};
 
 const add = async () => {
     let res = await api_login();

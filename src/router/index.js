@@ -44,14 +44,14 @@ const routes = [
         component: () => import('@/views/login/login.vue'),
     },
     {
-        path:'/echarts',
-        name:"Echarts",
-        component:() => import("@/views/echarts/echarts.vue")
+        path: '/echarts',
+        name: 'Echarts',
+        component: () => import('@/views/echarts/echarts.vue'),
     },
     {
-        path:"/guangdong",
-        name:'Guangdong',
-        component:() => import("@/views/guangdong/guangdong.vue"),
+        path: '/guangdong',
+        name: 'Guangdong',
+        component: () => import('@/views/guangdong/guangdong.vue'),
     },
     // 404
     {
@@ -59,7 +59,6 @@ const routes = [
         name: 'NotFound',
         component: () => import('@/views/404/404.vue'),
     },
-    
 ];
 
 const router = createRouter({
