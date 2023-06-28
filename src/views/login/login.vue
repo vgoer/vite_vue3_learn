@@ -18,6 +18,8 @@ import { useRoute } from 'vue-router';
 const store = store_main();
 const { sayMsg, count } = storeToRefs(store);
 console.log(sayMsg.value, count.value);
+console.log(sayMsg.value, count.value);
+console.log(sayMsg.value, count.value);
 
 // const login = store_login()
 // console.log(login)
