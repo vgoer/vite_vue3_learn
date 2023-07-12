@@ -53,6 +53,7 @@ const routes = [
         name: 'Guangdong',
         component: () => import('@/views/guangdong/guangdong.vue'),
     },
+
     // 404
     {
         path: '/:pathMatch(.*)*',
