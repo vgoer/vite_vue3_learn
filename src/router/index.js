@@ -36,7 +36,12 @@ const routes = [
             },
         ],
     },
-
+    // 数据面板
+    {
+        path:"/data",
+        name:"Data",
+        component:() => import('@/views/data/data.vue')
+    },
     // 登录
     {
         path: '/login',
