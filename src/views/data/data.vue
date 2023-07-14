@@ -22,7 +22,11 @@
 
                     </dv-border-box2>
                     <dv-border-box-3  style="height: 20vh;" :color="['#2b1216','#36282b']">
-
+                        <div w200 h160 flex justify-center items-center bg-dark>
+                            <div w740px h600px>
+                            <dv-flyline-chart-enhanced :config="datav_state.config3" :dev="true" style="width:100%;height:100%;" />
+                            </div>
+                        </div>
                     </dv-border-box-3>
                 </div>
             </div>
@@ -129,39 +133,231 @@
         </div>
         <div style="display: flex;">
             <div small-bg>
-                <dv-percent-pond :config="config" style="width:200px;height:100px;" />
+                <dv-percent-pond :config="datav_state.config" style="width:200px;height:100px;" />
             </div>
             <div small-bg>
-                <dv-percent-pond :config="config1" style="width:200px;height:100px;" />
+                <dv-percent-pond :config="datav_state.config1" style="width:200px;height:100px;" />
             </div>
             <div w800px h250px py10 flex justify-center items-center bg-dark>
-                <dv-water-level-pond :config="config2" style="width:200px;height:200px" />
+                <dv-water-level-pond :config="datav_state.config2" style="width:200px;height:200px" />
             </div>
         </div>
+            
     </dv-full-screen-container>
 </template>
 <script setup>
 import { reactive } from 'vue'
 import * as echarts from 'echarts'
 
-const config = reactive({
-    value: 66,
-    borderWidth: 5,
-    borderRadius: 10,
-    borderGap: 5,
+
+let mapImg = "https://datav-vue3.netlify.app/assets/map.ab23082c.jpg"
+let mapCenterPoint = "http://datav.jiaminghi.com/img/flylineChart/mapCenterPoint.png"
+let mapPoint = "http://datav.jiaminghi.com/img/flylineChart/mapPoint.png"
+
+const datav_state = reactive({
+    config:{
+        value: 66,
+        borderWidth: 5,
+        borderRadius: 10,
+        borderGap: 5,
+    },
+    config1: {
+        value: 66,
+        lineDash: [10, 2],
+        localGradient: true,
+    },
+    config2:{
+        data: [55],
+        shape: 'round',
+    },
+    config3:{
+        points: [
+        {
+        name: '郑州',
+        coordinate: [0.48, 0.35],
+        halo: {
+            show: true,
+        },
+        icon: {
+            src: mapCenterPoint,
+            width: 30,
+            height: 30,
+        },
+        text: {
+            show: false,
+        },
+        },
+        {
+        name: '新乡',
+        coordinate: [0.52, 0.23],
+        },
+        {
+        name: '焦作',
+        coordinate: [0.43, 0.29],
+        },
+        {
+        name: '开封',
+        coordinate: [0.59, 0.35],
+        },
+        {
+        name: '许昌',
+        coordinate: [0.53, 0.47],
+        },
+        {
+        name: '平顶山',
+        coordinate: [0.45, 0.54],
+        },
+        {
+        name: '洛阳',
+        coordinate: [0.36, 0.38],
+        },
+        {
+        name: '周口',
+        coordinate: [0.62, 0.55],
+        halo: {
+            show: true,
+            color: '#8378ea',
+        },
+        },
+        {
+        name: '漯河',
+        coordinate: [0.56, 0.56],
+        },
+        {
+        name: '南阳',
+        coordinate: [0.37, 0.66],
+        halo: {
+            show: true,
+            color: '#37a2da',
+        },
+        },
+        {
+        name: '信阳',
+        coordinate: [0.55, 0.81],
+        },
+        {
+        name: '驻马店',
+        coordinate: [0.55, 0.67],
+        },
+        {
+        name: '济源',
+        coordinate: [0.37, 0.29],
+        },
+        {
+        name: '三门峡',
+        coordinate: [0.20, 0.36],
+        },
+        {
+        name: '商丘',
+        coordinate: [0.76, 0.41],
+        },
+        {
+        name: '鹤壁',
+        coordinate: [0.59, 0.18],
+        },
+        {
+        name: '濮阳',
+        coordinate: [0.68, 0.17],
+        },
+        {
+        name: '安阳',
+        coordinate: [0.59, 0.10],
+        },
+    ],
+    lines: [
+        {
+        source: '新乡',
+        target: '郑州',
+        },
+        {
+        source: '焦作',
+        target: '郑州',
+        },
+        {
+        source: '开封',
+        target: '郑州',
+        },
+        {
+        source: '周口',
+        target: '郑州',
+        color: '#fb7293',
+        width: 2,
+        },
+        {
+        source: '南阳',
+        target: '郑州',
+        color: '#fb7293',
+        width: 2,
+        },
+        {
+        source: '济源',
+        target: '郑州',
+        },
+        {
+        source: '三门峡',
+        target: '郑州',
+        },
+        {
+        source: '商丘',
+        target: '郑州',
+        },
+        {
+        source: '鹤壁',
+        target: '郑州',
+        },
+        {
+        source: '濮阳',
+        target: '郑州',
+        },
+        {
+        source: '安阳',
+        target: '郑州',
+        },
+        {
+        source: '许昌',
+        target: '南阳',
+        color: '#37a2da',
+        },
+        {
+        source: '平顶山',
+        target: '南阳',
+        color: '#37a2da',
+        },
+        {
+        source: '洛阳',
+        target: '南阳',
+        color: '#37a2da',
+        },
+        {
+        source: '驻马店',
+        target: '周口',
+        color: '#8378ea',
+        },
+        {
+        source: '信阳',
+        target: '周口',
+        color: '#8378ea',
+        },
+        {
+        source: '漯河',
+        target: '周口',
+        color: '#8378ea',
+        },
+    ],
+    icon: {
+        show: true,
+        src: mapPoint,
+    },
+    text: {
+        show: true,
+    },
+    k: 0.5,
+    bgImgSrc: mapImg,
+    }
 })
 
 
-const config1 = reactive({
-    value: 66,
-    lineDash: [10, 2],
-    localGradient: true,
-})
 
-const config2 = reactive({
-    data: [55],
-    shape: 'round',
-})
 
 
 </script>
