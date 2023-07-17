@@ -36,7 +36,6 @@
 
                     </dv-border-box4>
                     <dv-border-box4  :reverse="true" style="height: 20vh;"  :color="['#e74033', '#307def']">
-
                     </dv-border-box4>
                     <dv-border-box-5  style="height: 20vh;">
 

@@ -42,6 +42,11 @@ const routes = [
         name:"Data",
         component:() => import('@/views/data/data.vue')
     },
+    {
+        path:"/map",
+        name:'map',
+        component:() => import("@/views/map/map.vue")
+    },
     // 登录
     {
         path: '/login',
