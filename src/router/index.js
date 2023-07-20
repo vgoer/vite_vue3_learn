@@ -47,6 +47,11 @@ const routes = [
         name:'map',
         component:() => import("@/views/map/map.vue")
     },
+    {
+        path:"/loading",
+        name:"loading",
+        component:() => import("@/views/loading/loading.vue")
+    },
     // 登录
     {
         path: '/login',
